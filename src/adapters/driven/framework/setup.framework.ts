@@ -1,16 +1,15 @@
 import express, { Express } from 'express'
+import { RouterFramework } from './router-controller.framework'
 
-export const SetupFramework = async (): Promise<Express> => {
-  const framework: Express = express()
+export const SetupFramework = async (): Promise<void> => {
   const port: string | number = process.env.PORT || 3000
+  const framework: Express = express()
+
+  framework.use(express.json())
+
+  RouterFramework(framework)
 
   framework.listen(port, () => {
-    console.log(`Server running on port ${port}`)
+    console.info(`Server running on port http://127.0.0.1:${port}`)
   })
-
-  framework.use('/', (req, res) => {
-    res.send('Hello World!')
-  })
-
-  return framework
 }
