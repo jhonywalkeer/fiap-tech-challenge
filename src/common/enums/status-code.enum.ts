@@ -1,3 +1,4 @@
 export enum StatusCode {
-  sucess = 200
+  Sucess = 200,
+  Created = 201
 }
