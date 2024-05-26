@@ -11,8 +11,21 @@ export class CreateProductPrismaRepository implements CreateProductRepository {
 
   async create(body: CreateProductDTO): Promise<Product> {
     const product = await this.prisma.product.findMany({
-      where: { name: body.name }
+      where: { name: body.name },
+      include: { category: true }
     })
+
+    const category = await this.prisma.category.findUnique({
+      where: { id: body.category_id }
+    })
+
+    if (!category) {
+      throw new HttpException(
+        StatusCode.NotFound,
+        ErrorMessage.NotFoundInformation,
+        'Categoria informada não encontrada'
+      )
+    }
 
     if (product.length > 0) {
       throw new HttpException(
@@ -26,7 +39,7 @@ export class CreateProductPrismaRepository implements CreateProductRepository {
       data: {
         name: body.name,
         description: body.description,
-        category: body.category,
+        category_id: category.id,
         price: body.price
       }
     })
