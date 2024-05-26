@@ -12,13 +12,9 @@ export class CreateProductController implements Controller<Product | never> {
     private readonly createProductPresenter: ResponseHandler<Product>
   ) {}
   async handle(body: HttpRequest) {
+    const { name, description, category_id, price } = body.body
     const payload = Object.assign(
-      new CreateProductDTO(
-        body.body.name,
-        body.body.description,
-        body.body.category,
-        body.body.price
-      )
+      new CreateProductDTO(name, description, category_id, price)
     )
     const product: Product = await this.createProductUC.execute(payload)
     return this.createProductPresenter.response(product, StatusCode.Created)

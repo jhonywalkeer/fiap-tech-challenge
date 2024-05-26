@@ -6,16 +6,16 @@ import { IsStringValidator } from 'adapters/driver/validators/is-string.validato
 export class CreateProductDTO {
   name: string
   description: string
-  category: string
+  category_id: string
   price: number
 
   constructor(
     name: string,
     description: string,
-    category: string,
+    category_id: string,
     price: number
   ) {
-    if (!name || !description || !category) {
+    if (!name || !description || !category_id) {
       throw new HttpException(
         StatusCode.BadRequest,
         ErrorMessage.InvalidBody,
@@ -24,11 +24,11 @@ export class CreateProductDTO {
     }
     IsStringValidator(name, 'name')
     IsStringValidator(description, 'description')
-    IsStringValidator(category, 'category')
+    IsStringValidator(category_id, 'category_id')
 
     this.name = name
     this.description = description
-    this.category = category
+    this.category_id = category_id
     this.price = price
   }
 }

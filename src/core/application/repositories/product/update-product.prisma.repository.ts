@@ -33,9 +33,9 @@ export class UpdateProductPrismaRepository implements UpdateProductRepository {
       data: {
         name: pathParameters.name ? pathParameters.name : product.name,
         price: pathParameters.price ? pathParameters.price : product.price,
-        category: pathParameters.category
-          ? pathParameters.category
-          : product.category,
+        category_id: pathParameters.category_id
+          ? pathParameters.category_id
+          : product.category_id,
         description: pathParameters.description
           ? pathParameters.description
           : product.description

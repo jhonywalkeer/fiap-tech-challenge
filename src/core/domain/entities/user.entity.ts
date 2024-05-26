@@ -1,6 +1,6 @@
-export class User {
-  id?: string
-  name: string
+import { Base } from './base.entity'
+
+export class User extends Base {
   email: string
   social_security_number: string
 
@@ -10,8 +10,7 @@ export class User {
     social_security_number: string,
     id?: string
   ) {
-    this.id = id
-    this.name = name
+    super(name, id)
     this.email = email
     this.social_security_number = social_security_number
   }

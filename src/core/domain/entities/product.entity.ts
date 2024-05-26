@@ -1,21 +1,20 @@
-export class Product {
-  id?: string
-  name: string
+import { Base } from './base.entity'
+
+export class Product extends Base {
   description: string
-  category: string
+  category_id: string
   price: number
 
   constructor(
     name: string,
     description: string,
-    category: string,
+    category_id: string,
     price: number,
     id?: string
   ) {
-    this.id = id
-    this.name = name
+    super(name, id)
     this.description = description
-    this.category = category
+    this.category_id = category_id
     this.price = price
   }
 }

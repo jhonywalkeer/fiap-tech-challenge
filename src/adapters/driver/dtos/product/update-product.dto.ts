@@ -4,19 +4,19 @@ export class UpdateProductDTO extends IdentifierDTO {
   name: string
   description: string
   price: number
-  category: string
+  category_id: string
 
   constructor(
     id: string,
     name: string,
     description: string,
     price: number,
-    category: string
+    category_id: string
   ) {
     super(id)
     this.name = name
     this.description = description
     this.price = price
-    this.category = category
+    this.category_id = category_id
   }
 }
