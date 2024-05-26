@@ -13,7 +13,7 @@ export class FindCategoryByIdController
 {
   constructor(
     private readonly findCategoryByIdUC: FindCategoryByIdUseCase,
-    private readonly findCatgoeryByIdPresenter: ResponseHandler<Category>
+    private readonly findCategoryByIdPresenter: ResponseHandler<Category>
   ) {}
   async handle(pathParameters: HttpRequest) {
     const { id } = pathParameters.params
@@ -25,10 +25,10 @@ export class FindCategoryByIdController
       throw new HttpException(
         StatusCode.NotFound,
         ErrorMessage.NotFoundInformation,
-        'Produto informado não encontrado'
+        'Categoria informada não encontrada'
       )
     }
 
-    return this.findCatgoeryByIdPresenter.response(category, StatusCode.Sucess)
+    return this.findCategoryByIdPresenter.response(category, StatusCode.Sucess)
   }
 }
