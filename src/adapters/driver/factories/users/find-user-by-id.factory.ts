@@ -8,17 +8,17 @@ import { User } from 'core/domain/entities/user.entity'
 export const FindUserByIdControllerFactory = () => {
   const databaseConnection = new DatabaseConnection()
   const userRepository = new FindUserByIdPrismaRepository(databaseConnection)
-  const findUserByParameterUserUseCase = new FindUserByIdUC(userRepository)
+  const findUserByIdUserUseCase = new FindUserByIdUC(userRepository)
   const genericSucessPresenter = new HttpGenericResponse<User>()
-  const findUserByParameterController = new FindByIdController(
-    findUserByParameterUserUseCase,
+  const findUserByIdController = new FindByIdController(
+    findUserByIdUserUseCase,
     genericSucessPresenter
   )
 
   return {
     databaseConnection,
     userRepository,
-    findUserByParameterUserUseCase,
-    findUserByParameterController
+    findUserByIdUserUseCase,
+    findUserByIdController
   }
 }

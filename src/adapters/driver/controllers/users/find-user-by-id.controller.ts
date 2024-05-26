@@ -13,8 +13,8 @@ export class FindByIdController implements Controller<User | never> {
     private readonly findUserByIdUC: FindUserByIdUseCase,
     private readonly findUserByIdPresenter: ResponseHandler<User>
   ) {}
-  async handle(queryParameters: HttpRequest) {
-    const { cpf } = queryParameters.query
+  async handle(pathParameters: HttpRequest) {
+    const { cpf } = pathParameters.params
     const parameters = Object.assign(new FindUserByIdDTO(cpf))
     const user: User | null = await this.findUserByIdUC.execute(parameters)
 
