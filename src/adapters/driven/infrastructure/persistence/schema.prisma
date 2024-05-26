@@ -18,10 +18,22 @@ model user {
 
 model product {
   id          String   @id @default(cuid())
-  name        String
+  name        String   @unique
   description String
   price       Float
-  category    String
+  category_id String
   created_at  DateTime @default(now())
   updated_at  DateTime @updatedAt
+
+  category category @relation(fields: [category_id], references: [id])
+}
+
+model category {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  description String
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
+
+  product     product[]
 }
