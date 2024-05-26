@@ -10,17 +10,17 @@ export const FindProductByIdControllerFactory = () => {
   const productRepository = new FindProductByIdPrismaRepository(
     databaseConnection
   )
-  const findProductByIdUserUseCase = new FindProductByIdUC(productRepository)
+  const findProductByIdUseCase = new FindProductByIdUC(productRepository)
   const genericSucessPresenter = new HttpGenericResponse<Product>()
   const findProductByIdController = new FindProductByIdController(
-    findProductByIdUserUseCase,
+    findProductByIdUseCase,
     genericSucessPresenter
   )
 
   return {
     databaseConnection,
     productRepository,
-    findProductByIdUserUseCase,
+    findProductByIdUseCase,
     findProductByIdController
   }
 }
