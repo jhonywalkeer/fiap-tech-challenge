@@ -1,4 +1,4 @@
-export const removeDotsAndDashesFormat = (input: string): string => {
+export const RemoveDotsAndDashesFormat = (input: string): string => {
   const pattern = /[.-]/g
 
   return input.replace(pattern, '')

@@ -10,6 +10,6 @@ export const SetupFramework = async (): Promise<void> => {
   RouterFramework(framework)
 
   framework.listen(port, () => {
-    console.info(`Server running on port http://127.0.0.1:${port}`)
+    console.info(`API running on port http://127.0.0.1:${port}`)
   })
 }

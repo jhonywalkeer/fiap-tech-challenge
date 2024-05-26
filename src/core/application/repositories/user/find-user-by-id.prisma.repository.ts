@@ -6,10 +6,10 @@ import { User } from 'core/domain/entities/user.entity'
 export class FindUserByIdPrismaRepository implements FindUserByIdRepository {
   constructor(private readonly prisma: DatabaseConnection) {}
 
-  async findById(queryParameters: FindUserByIdDTO): Promise<User | null> {
+  async findById(pathParameters: FindUserByIdDTO): Promise<User | null> {
     return this.prisma.user.findFirst({
       where: {
-        social_security_number: queryParameters.social_security_number
+        social_security_number: pathParameters.social_security_number
       }
     })
   }

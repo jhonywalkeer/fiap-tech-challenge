@@ -7,7 +7,7 @@ export class FindUserByIdUC implements FindUserByIdUseCase {
   constructor(
     private readonly findUserByIdRepository: FindUserByIdRepository
   ) {}
-  async execute(queryParameters: FindUserByIdDTO): Promise<User | null> {
-    return await this.findUserByIdRepository.findById(queryParameters)
+  async execute(pathParameters: FindUserByIdDTO): Promise<User | null> {
+    return await this.findUserByIdRepository.findById(pathParameters)
   }
 }
