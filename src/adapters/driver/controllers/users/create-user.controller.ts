@@ -4,15 +4,22 @@ import { ResponseHandler } from 'adapters/driver/presenters/response-handler.pre
 import { CreateUserUseCase } from 'core/application/ports/in/create-user.usecase.in'
 import { User } from 'core/domain/entities/user.entity'
 import { StatusCode } from 'common/enums/status-code.enum'
+import { CreateUserDTO } from 'adapters/driver/dtos/users/create-user.dto'
 
 export class CreateUserController implements Controller<User | never> {
   constructor(
     private readonly createUserUC: CreateUserUseCase,
     private readonly createUserPresenter: ResponseHandler<User>
   ) {}
-  async handle(payload: HttpRequest) {
-    const body = payload.body
-    const user: User = await this.createUserUC.execute(body)
+  async handle(body: HttpRequest) {
+    const payload = Object.assign(
+      new CreateUserDTO(
+        body.body.name,
+        body.body.email,
+        body.body.social_security_number
+      )
+    )
+    const user: User = await this.createUserUC.execute(payload)
     return this.createUserPresenter.response(user, StatusCode.Created)
   }
 }
