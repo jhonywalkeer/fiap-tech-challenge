@@ -14,8 +14,8 @@ export class CreateUserDTO {
     if (!name || !email || !social_security_number) {
       throw new HttpException(
         StatusCode.BadRequest,
-        ErrorMessage.InvalidPayload,
-        'Payload precisa ser informado corretamente'
+        ErrorMessage.InvalidBody,
+        'Body precisa ser informado corretamente'
       )
     }
     IsStringValidator(name, 'name')
