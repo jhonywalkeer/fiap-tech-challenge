@@ -10,7 +10,10 @@ export const CreateUserControllerFactory = () => {
   const userRepository = new CreateUserPrismaRepository(databaseConnection)
   const createUserUseCase = new CreateUserUC(userRepository)
   const genericSucessPresenter = new HttpGenericResponse<User>()
-  const createUserController = new CreateUserController(createUserUseCase, genericSucessPresenter)
+  const createUserController = new CreateUserController(
+    createUserUseCase,
+    genericSucessPresenter
+  )
 
   return {
     databaseConnection,
