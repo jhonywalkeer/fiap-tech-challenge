@@ -1,4 +1,4 @@
-import { FindProductByIdDTO } from 'adapters/driver/dtos/product/find-user-by-id.dto'
+import { FindProductByIdDTO } from 'adapters/driver/dtos/product/find-product-by-id.dto'
 import { Product } from 'core/domain/entities/product.entity'
 
 export interface FindProductByIdUseCase {
