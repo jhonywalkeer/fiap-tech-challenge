@@ -11,7 +11,7 @@ export const EmailListValidator = (value: string | undefined) => {
     throw new HttpException(
       StatusCode.BadRequest,
       ErrorMessage.InvalidParameters,
-      'E-mail deve ser valido (sendo incluso no mesmo um dos dominios listados: @gmail.com, @hotmail.com, @yahoo.com, @outlook.com, @live.com, @fiap.com) para que o cadastro seja efetuado'
+      'E-mail deve ser válido (sendo incluso no mesmo um dos dominios listados: @gmail.com, @hotmail.com, @yahoo.com, @outlook.com, @live.com, @fiap.com) para que o cadastro seja efetuado'
     )
   }
 
