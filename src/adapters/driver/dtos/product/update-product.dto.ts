@@ -1,21 +1,22 @@
-export class Product {
-  id?: string
+import { IdentifierDTO } from '../common/identifier.dto'
+
+export class UpdateProductDTO extends IdentifierDTO {
   name: string
   description: string
-  category: string
   price: number
+  category: string
 
   constructor(
+    id: string,
     name: string,
     description: string,
-    category: string,
     price: number,
-    id?: string
+    category: string
   ) {
-    this.id = id
+    super(id)
     this.name = name
     this.description = description
-    this.category = category
     this.price = price
+    this.category = category
   }
 }

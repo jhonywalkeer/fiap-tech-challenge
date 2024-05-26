@@ -4,15 +4,17 @@ import { ErrorMessage } from 'common/enums/error-message.enum'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
 import { DeleteProductRepository } from 'core/application/ports/out/delete-product.repository.out'
+import { FindProductByIdPrismaRepository } from './find-product-by-id.prisma.repository'
 
 export class DeleteProductPrismaRepository implements DeleteProductRepository {
-  constructor(private readonly prisma: DatabaseConnection) {}
+  constructor(
+    private readonly prisma: DatabaseConnection,
+    private readonly findProductById: FindProductByIdPrismaRepository
+  ) {}
 
   async delete(pathParameters: DeleteProductDTO): Promise<void> {
-    const product = await this.prisma.product.findUnique({
-      where: {
-        id: pathParameters.id
-      }
+    const product = await this.findProductById.findById({
+      id: pathParameters.id
     })
 
     if (product === null) {
