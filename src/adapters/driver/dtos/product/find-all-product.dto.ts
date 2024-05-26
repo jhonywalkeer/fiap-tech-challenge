@@ -1,3 +1,3 @@
 import { PaginateDTO } from '../pagination/pagination.dto'
 
-export class FindAllUsersDTO extends PaginateDTO {}
+export class FindAllProductsDTO extends PaginateDTO {}
