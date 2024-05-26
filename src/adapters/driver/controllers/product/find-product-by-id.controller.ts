@@ -23,7 +23,7 @@ export class FindProductByIdController implements Controller<Product | never> {
       throw new HttpException(
         StatusCode.NotFound,
         ErrorMessage.NotFoundInformation,
-        'Usuário informado não encontrado'
+        'Produto informado não encontrado'
       )
     }
 
