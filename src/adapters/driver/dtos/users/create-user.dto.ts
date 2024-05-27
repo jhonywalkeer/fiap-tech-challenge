@@ -1,6 +1,6 @@
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
 import { StatusCode } from 'common/enums/status-code.enum'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { ErrorName } from 'common/enums/error-name.enum'
 import { IsStringValidator } from 'adapters/driver/validators/is-string.validator'
 import { EmailListValidator } from 'adapters/driver/validators/email-list.validator'
 import { IsSocialSecurityNumberValidator } from 'adapters/driver/validators/is-cpf.validator'
@@ -14,7 +14,7 @@ export class CreateUserDTO {
     if (!name || !email || !social_security_number) {
       throw new HttpException(
         StatusCode.BadRequest,
-        ErrorMessage.InvalidBody,
+        ErrorName.InvalidBody,
         'Body precisa ser informado corretamente'
       )
     }

@@ -1,6 +1,6 @@
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
 import { StatusCode } from 'common/enums/status-code.enum'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { ErrorName } from 'common/enums/error-name.enum'
 import { IsStringValidator } from 'adapters/driver/validators/is-string.validator'
 
 export class CreateProductDTO {
@@ -18,7 +18,7 @@ export class CreateProductDTO {
     if (!name || !description || !category_id) {
       throw new HttpException(
         StatusCode.BadRequest,
-        ErrorMessage.InvalidBody,
+        ErrorName.InvalidBody,
         'Body precisa ser informado corretamente'
       )
     }

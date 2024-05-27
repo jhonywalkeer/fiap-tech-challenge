@@ -1,6 +1,6 @@
 import { UpdateCategoryDTO } from 'adapters/driver/dtos/category/update-category.dto'
 import { ResponseHandler } from 'adapters/driver/presenters/response-handler.presenter'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { ErrorName } from 'common/enums/error-name.enum'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
 import { Controller } from 'core/application/ports/in/controller.in'
@@ -25,7 +25,7 @@ export class UpdateCategoryController implements Controller<Category | never> {
     if (!category) {
       throw new HttpException(
         StatusCode.NotFound,
-        ErrorMessage.NotFoundInformation,
+        ErrorName.NotFoundInformation,
         'Produto informado não encontrado'
       )
     }

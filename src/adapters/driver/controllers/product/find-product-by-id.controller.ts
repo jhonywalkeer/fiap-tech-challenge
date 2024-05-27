@@ -3,7 +3,7 @@ import { HttpRequest } from 'core/application/ports/in/http-request.in'
 import { ResponseHandler } from 'adapters/driver/presenters/response-handler.presenter'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { ErrorName } from 'common/enums/error-name.enum'
 import { Product } from 'core/domain/entities/product.entity'
 import { FindProductByIdDTO } from 'adapters/driver/dtos/product/find-product-by-id.dto'
 import { FindProductByIdUseCase } from 'core/application/ports/in/find-product-by-id.usecase.in'
@@ -22,7 +22,7 @@ export class FindProductByIdController implements Controller<Product | never> {
     if (!product) {
       throw new HttpException(
         StatusCode.NotFound,
-        ErrorMessage.NotFoundInformation,
+        ErrorName.NotFoundInformation,
         'Produto informado não encontrado'
       )
     }

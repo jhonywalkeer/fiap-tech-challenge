@@ -1,6 +1,6 @@
 import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
 import { CreateOrderDTO } from 'adapters/driver/dtos/order/create-order.dto'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { ErrorName } from 'common/enums/error-name.enum'
 import { OrderStatus } from 'common/enums/order-status.enum'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
@@ -47,7 +47,7 @@ export class CreateOrderPrismaRepository implements CreateOrderRepository {
       if (!product) {
         throw new HttpException(
           StatusCode.NotFound,
-          ErrorMessage.NotFoundInformation,
+          ErrorName.NotFoundInformation,
           `Produto com id ${item.product_id} não encontrado`
         )
       }
