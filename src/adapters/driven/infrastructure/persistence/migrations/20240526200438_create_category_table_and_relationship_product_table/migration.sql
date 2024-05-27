@@ -25,3 +25,14 @@ CREATE UNIQUE INDEX "category_name_key" ON "category"("name");
 
 -- AddForeignKey
 ALTER TABLE "product" ADD CONSTRAINT "product_category_id_fkey" FOREIGN KEY ("category_id") REFERENCES "category"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- InsertData
+
+INSERT INTO "category" ("id", "name", "description", "created_at", "updated_at") VALUES ('clwo9jgii000008mkg7os77c8', 'Lanche', 'Perfeito para matar a fome em qualquer momento do dia', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+INSERT INTO "category" ("id", "name", "description", "created_at", "updated_at") VALUES ('clwo9oseo000308mkco8n29lk', 'Acompanhamento',
+'Aquilo que não pode faltar pedido, o parceiro perfeito', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+INSERT INTO "category" ("id", "name", "description", "created_at", "updated_at") VALUES ('clwo9lczp000108mkhloy2zrz', 'Bebida', 'Refrescante e saborosa para qualquer ocasião', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+INSERT INTO "category" ("id", "name", "description", "created_at", "updated_at") VALUES ('clwo9lrvw000208mkfv954z2t', 'Sobremesa', 'Deliciosas sobremesas para fechar ou matar a vontade com chave de ouro', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
