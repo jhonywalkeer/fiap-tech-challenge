@@ -41,48 +41,59 @@ model category {
 }
 
 model order {
-  id         String       @id @default(cuid())
-  order      String       @unique
-  status     String
-  order_item order_item[]
-  customer   String
-  payment_id String
-  created_at DateTime     @default(now())
-  updated_at DateTime     @updatedAt
-  user_id  String?
+  id          String       @id @default(cuid())
+  order       String       @unique
+  status      String
+  order_item  order_item[]
+  observation String?
+  customer    String
+  payment_id  String
+  created_at  DateTime     @default(now())
+  updated_at  DateTime     @updatedAt
+  deleted_at  DateTime?
+  user_id     String?
 
   payment payment @relation(fields: [payment_id], references: [id])
   user    user?   @relation(fields: [user_id], references: [id])
 
+  canceled_order canceled_order[]
 }
 
 model order_item {
-  id         String          @id @default(cuid())
+  id         String   @id @default(cuid())
   order_id   String
   product_id String
   name       String
   quantity   Int
-  options    order_options[]
   price      Float
   amount     Float
-  created_at DateTime        @default(now())
-  updated_at DateTime        @updatedAt
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 
   order   order   @relation(fields: [order_id], references: [id])
   product product @relation(fields: [product_id], references: [id])
 }
 
-model order_options {
-  id           String      @id @default(cuid())
-  extras       String
-  order_item   order_item? @relation(fields: [order_itemId], references: [id])
-  order_itemId String?
+model canceled_order {
+  id         String   @id @default(cuid())
+  order_id   String
+  reason     String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  order order @relation(fields: [order_id], references: [id])
 }
 
 model payment {
-  id             String  @id @default(cuid())
-  user_id        String
+  id             String    @id @default(cuid())
+  order_id       String
+  user_id        String?
   payment_method String
   amount         Float
-  order          order[]
+  payment_date   DateTime?
+  created_at     DateTime  @default(now())
+  status         String
+  qr_code        String
+
+  order order[]
 }
