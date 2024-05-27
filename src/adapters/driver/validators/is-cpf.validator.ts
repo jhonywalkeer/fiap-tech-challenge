@@ -3,9 +3,10 @@ import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
 
 export const IsSocialSecurityNumberValidator = (value: string) => {
-  const isValid = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(value)
+  const removeSpecialCharacters = value.replace(/\./g, '').replace(/-/g, '')
+  const size = value.length === 11
 
-  if (!isValid) {
+  if (!removeSpecialCharacters || !size) {
     throw new HttpException(
       StatusCode.BadRequest,
       ErrorMessage.InvalidParameters,
