@@ -1,5 +1,5 @@
 import { IsStringValidator } from 'adapters/driver/validators/is-string.validator'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { ErrorName } from 'common/enums/error-name.enum'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
 
@@ -11,7 +11,7 @@ export class CreateCategoryDTO {
     if (!name || !description) {
       throw new HttpException(
         StatusCode.BadRequest,
-        ErrorMessage.InvalidBody,
+        ErrorName.InvalidBody,
         'Body precisa ser informado corretamente'
       )
     }

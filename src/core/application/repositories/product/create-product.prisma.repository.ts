@@ -1,6 +1,6 @@
 import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
 import { CreateProductDTO } from 'adapters/driver/dtos/product/create-product.dto'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { ErrorName } from 'common/enums/error-name.enum'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
 import { CreateProductRepository } from 'core/application/ports/out/create-product.repository.out'
@@ -22,7 +22,7 @@ export class CreateProductPrismaRepository implements CreateProductRepository {
     if (!category) {
       throw new HttpException(
         StatusCode.NotFound,
-        ErrorMessage.NotFoundInformation,
+        ErrorName.NotFoundInformation,
         'Categoria informada não encontrada'
       )
     }
@@ -30,7 +30,7 @@ export class CreateProductPrismaRepository implements CreateProductRepository {
     if (product.length > 0) {
       throw new HttpException(
         StatusCode.NoContent,
-        ErrorMessage.NotFoundInformation,
+        ErrorName.NotFoundInformation,
         'Produto já existente'
       )
     }

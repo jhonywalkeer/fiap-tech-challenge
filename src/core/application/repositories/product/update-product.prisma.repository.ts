@@ -1,5 +1,5 @@
 import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { ErrorName } from 'common/enums/error-name.enum'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
 import { FindProductByIdPrismaRepository } from './find-product-by-id.prisma.repository'
@@ -21,7 +21,7 @@ export class UpdateProductPrismaRepository implements UpdateProductRepository {
     if (product === null) {
       throw new HttpException(
         StatusCode.NotFound,
-        ErrorMessage.NotFoundInformation,
+        ErrorName.NotFoundInformation,
         'Produto informado nao existe'
       )
     }

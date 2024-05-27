@@ -1,5 +1,5 @@
 import { SymbolsListValidator } from 'adapters/driver/validators/symbols.validator'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { ErrorName } from 'common/enums/error-name.enum'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
 
@@ -10,7 +10,7 @@ export class IdentifierDTO {
     if (!id)
       throw new HttpException(
         StatusCode.BadRequest,
-        ErrorMessage.InvalidParameters,
+        ErrorName.InvalidParameters,
         'Você deve fornecer pelo menos um parâmetro para procurar um usuário'
       )
     SymbolsListValidator(id)

@@ -3,29 +3,26 @@ import { ErrorName } from 'common/enums/error-name.enum'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
 import { Controller } from 'core/application/ports/in/controller.in'
-import { FindAllCategoriesUseCase } from 'core/application/ports/in/find-all-categories.usecase.in'
 import { HttpRequest } from 'core/application/ports/in/http-request.in'
-import { Category } from 'core/domain/entities/category.entity'
+import { Order } from 'core/domain/entities/order.entity'
 
-export class FindAllCategoriesController
-  implements Controller<Category[] | never>
-{
+export class FindAllOrdersController implements Controller<Order[] | never> {
   constructor(
-    private readonly findAllUserUC: FindAllCategoriesUseCase,
-    private readonly findAllUserPresenter: ResponseHandler<Category[]>
+    private readonly findAllOrdersUC: any,
+    private readonly findAllOrdersPresenter: ResponseHandler<Order[]>
   ) {}
   async handle(queryParameters: HttpRequest) {
-    const categories: Category[] | null = await this.findAllUserUC.execute(
+    const orders: Order[] | null = await this.findAllOrdersUC.execute(
       queryParameters.query
     )
 
-    if (!categories) {
+    if (!orders) {
       throw new HttpException(
         StatusCode.NotFound,
         ErrorName.NotFoundInformation,
-        'Categorias não encontradas'
+        'Pedidos não encontrados'
       )
     }
-    return this.findAllUserPresenter.response(categories, StatusCode.Sucess)
+    return this.findAllOrdersPresenter.response(orders, StatusCode.Sucess)
   }
 }
