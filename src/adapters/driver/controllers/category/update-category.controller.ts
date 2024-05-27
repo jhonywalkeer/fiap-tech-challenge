@@ -5,11 +5,12 @@ import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
 import { Controller } from 'core/application/ports/in/controller.in'
 import { HttpRequest } from 'core/application/ports/in/http-request.in'
+import { UpdateCategoryUseCase } from 'core/application/ports/in/update-category.usecase.in'
 import { Category } from 'core/domain/entities/category.entity'
 
 export class UpdateCategoryController implements Controller<Category | never> {
   constructor(
-    private readonly updateCategoryUC: any, // UpdateCategoryUseCase,
+    private readonly updateCategoryUC: UpdateCategoryUseCase,
     private readonly updateCategoryPresenter: ResponseHandler<Category>
   ) {}
   async handle(pathParameters: HttpRequest) {
