@@ -5,6 +5,7 @@ import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
 import { DeleteProductRepository } from 'core/application/ports/out/delete-product.repository.out'
 import { FindProductByIdPrismaRepository } from './find-product-by-id.prisma.repository'
+import { ErrorMessage } from 'common/enums/error-message.enum'
 
 export class DeleteProductPrismaRepository implements DeleteProductRepository {
   constructor(
@@ -21,7 +22,7 @@ export class DeleteProductPrismaRepository implements DeleteProductRepository {
       throw new HttpException(
         StatusCode.NoContent,
         ErrorName.NotFoundInformation,
-        'Produto já deletado ou inexistente'
+        ErrorMessage.ProductNotExists
       )
     }
 

@@ -6,7 +6,7 @@ import { CreateProductUseCase } from 'core/application/ports/in/create-product.u
 import { HttpRequest } from 'core/application/ports/in/http-request.in'
 import { Product } from 'core/domain/entities/product.entity'
 
-export class CreateProductController implements Controller<Product | never> {
+export class CreateProductController implements Controller<Product> {
   constructor(
     private readonly createProductUC: CreateProductUseCase,
     private readonly createProductPresenter: ResponseHandler<Product>

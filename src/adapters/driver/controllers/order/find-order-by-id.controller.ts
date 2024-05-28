@@ -6,10 +6,12 @@ import { HttpException } from 'common/utils/exceptions/http.exceptions'
 import { ErrorName } from 'common/enums/error-name.enum'
 import { Order } from 'core/domain/entities/order.entity'
 import { FindOrderByIdDTO } from 'adapters/driver/dtos/order/find-order-by-id.dto'
+import { ErrorMessage } from 'common/enums/error-message.enum'
+import { FindOrderByIdUC } from 'core/application/usecases/order/find-order-by-id.usecase'
 
-export class FindOrderByIdController implements Controller<Order | never> {
+export class FindOrderByIdController implements Controller<Order> {
   constructor(
-    private readonly findOrderByIdUC: any,
+    private readonly findOrderByIdUC: FindOrderByIdUC,
     private readonly findOrderByIdPresenter: ResponseHandler<Order>
   ) {}
   async handle(pathParameters: HttpRequest) {
@@ -21,7 +23,7 @@ export class FindOrderByIdController implements Controller<Order | never> {
       throw new HttpException(
         StatusCode.NotFound,
         ErrorName.NotFoundInformation,
-        'Pedido informado não encontrado'
+        ErrorMessage.OrderNotFound
       )
     }
 

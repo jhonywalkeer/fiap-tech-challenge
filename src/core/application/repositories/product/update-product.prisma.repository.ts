@@ -6,6 +6,8 @@ import { FindProductByIdPrismaRepository } from './find-product-by-id.prisma.rep
 import { UpdateProductRepository } from 'core/application/ports/out/update-product.repository.out'
 import { Product } from 'core/domain/entities/product.entity'
 import { UpdateProductDTO } from 'adapters/driver/dtos/product/update-product.dto'
+import { ProductMap } from 'adapters/driven/mappers/products.map'
+import { ErrorMessage } from 'common/enums/error-message.enum'
 
 export class UpdateProductPrismaRepository implements UpdateProductRepository {
   constructor(
@@ -18,11 +20,25 @@ export class UpdateProductPrismaRepository implements UpdateProductRepository {
       id: pathParameters.id
     })
 
+    const category = await this.prisma.category.findUnique({
+      where: {
+        id: pathParameters.category_id
+      }
+    })
+
     if (product === null) {
       throw new HttpException(
         StatusCode.NotFound,
         ErrorName.NotFoundInformation,
-        'Produto informado nao existe'
+        ErrorMessage.ProductNotFound
+      )
+    }
+
+    if (category === null) {
+      throw new HttpException(
+        StatusCode.NotFound,
+        ErrorName.NotFoundInformation,
+        ErrorMessage.CategoriesNotFound
       )
     }
 
@@ -35,17 +51,17 @@ export class UpdateProductPrismaRepository implements UpdateProductRepository {
         price: pathParameters.price ? pathParameters.price : product.price,
         category_id: pathParameters.category_id
           ? pathParameters.category_id
-          : product.category_id,
+          : product.category.id,
         description: pathParameters.description
           ? pathParameters.description
           : product.description
       }
     })
 
-    const find = await this.findProductById.findById({
+    const findProduct = await this.findProductById.findById({
       id: update.id
     })
 
-    return find
+    return ProductMap.execute(findProduct, findProduct?.category)
   }
 }

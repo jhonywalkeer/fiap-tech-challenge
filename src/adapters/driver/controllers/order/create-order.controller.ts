@@ -6,7 +6,7 @@ import { CreateOrderUseCase } from 'core/application/ports/in/create-order.useca
 import { HttpRequest } from 'core/application/ports/in/http-request.in'
 import { Order } from 'core/domain/entities/order.entity'
 
-export class CreateOrderController implements Controller<Order | never> {
+export class CreateOrderController implements Controller<Order> {
   constructor(
     private readonly createOrderUC: CreateOrderUseCase,
     private readonly createOrderPresenter: ResponseHandler<Order>

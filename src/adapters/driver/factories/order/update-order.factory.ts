@@ -1,4 +1,5 @@
 import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
+import { UpdateOrderController } from 'adapters/driver/controllers/order/update-order.controller'
 import { HttpGenericResponse } from 'adapters/driver/presenters/http-generic-response.presenter'
 import { FindOrderByIdPrismaRepository } from 'core/application/repositories/order/find-order-by-id.prisma.repository'
 import { UpdateOrderPrismaRepository } from 'core/application/repositories/order/update-order.prisma.repository'

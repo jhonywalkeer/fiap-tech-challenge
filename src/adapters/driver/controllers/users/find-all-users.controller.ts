@@ -7,7 +7,7 @@ import { FindAllUsersUseCase } from 'core/application/ports/in/find-all-users.us
 import { HttpRequest } from 'core/application/ports/in/http-request.in'
 import { User } from 'core/domain/entities/user.entity'
 
-export class FindAllUsersController implements Controller<User[] | never> {
+export class FindAllUsersController implements Controller<User[]> {
   constructor(
     private readonly findAllUserUC: FindAllUsersUseCase,
     private readonly findAllUserPresenter: ResponseHandler<User[]>

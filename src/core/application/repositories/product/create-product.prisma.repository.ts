@@ -1,5 +1,7 @@
 import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
+import { ProductMap } from 'adapters/driven/mappers/products.map'
 import { CreateProductDTO } from 'adapters/driver/dtos/product/create-product.dto'
+import { ErrorMessage } from 'common/enums/error-message.enum'
 import { ErrorName } from 'common/enums/error-name.enum'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
@@ -23,19 +25,19 @@ export class CreateProductPrismaRepository implements CreateProductRepository {
       throw new HttpException(
         StatusCode.NotFound,
         ErrorName.NotFoundInformation,
-        'Categoria informada não encontrada'
+        ErrorMessage.CategoryNotFound
       )
     }
 
     if (product.length > 0) {
       throw new HttpException(
-        StatusCode.NoContent,
-        ErrorName.NotFoundInformation,
-        'Produto já existente'
+        StatusCode.Conflict,
+        ErrorName.ResourceAlreadyExists,
+        ErrorMessage.ProductExists
       )
     }
 
-    return this.prisma.product.create({
+    const createProduct = await this.prisma.product.create({
       data: {
         name: body.name,
         description: body.description,
@@ -43,5 +45,7 @@ export class CreateProductPrismaRepository implements CreateProductRepository {
         price: body.price
       }
     })
+
+    return ProductMap.execute(createProduct, category)
   }
 }

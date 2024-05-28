@@ -2,8 +2,8 @@ import { Router } from 'express'
 import { ExpressRouteHttp } from 'adapters/driver/http/express-route.http'
 import { UpdatePaymentControllerFactory } from '../factories/payment/update-payment.factory'
 
-export const PaymentRoute = Router()
+export const PaymentsRoute = Router()
 
 const { updatePaymentController } = UpdatePaymentControllerFactory()
 
-PaymentRoute.patch('/:id', ExpressRouteHttp(updatePaymentController))
+PaymentsRoute.put('/:id', ExpressRouteHttp(updatePaymentController))

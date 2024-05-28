@@ -8,5 +8,5 @@ export class Order {
   items: OrderItems[]
   customer?: string
   payment?: Payment
-  observation?: string
+  observation?: string | null
 }

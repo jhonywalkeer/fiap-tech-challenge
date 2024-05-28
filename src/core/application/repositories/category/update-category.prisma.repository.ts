@@ -6,6 +6,7 @@ import { UpdateCategoryRepository } from 'core/application/ports/out/update-cate
 import { FindCategoryByIdPrismaRepository } from './find-category-by-id.prisma.repository'
 import { UpdateCategoryDTO } from 'adapters/driver/dtos/category/update-category.dto'
 import { Category } from 'core/domain/entities/category.entity'
+import { ErrorMessage } from 'common/enums/error-message.enum'
 
 export class UpdateCategoryPrismaRepository
   implements UpdateCategoryRepository
@@ -20,11 +21,11 @@ export class UpdateCategoryPrismaRepository
       id: pathParameters.id
     })
 
-    if (category === null) {
+    if (!category) {
       throw new HttpException(
         StatusCode.NotFound,
         ErrorName.NotFoundInformation,
-        'Categoria informado não existe'
+        ErrorMessage.CategoryNotFound
       )
     }
 
