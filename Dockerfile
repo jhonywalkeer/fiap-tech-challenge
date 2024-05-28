@@ -1,9 +1,16 @@
-FROM node:17-alpine
+FROM node:18
+
 WORKDIR /usr/src/app
+
 COPY package*.json ./
+
 RUN npm install
+
 COPY . .
-RUN npx prisma generate && npm run start
+
+RUN npm run build
+
 EXPOSE 3000
 
-CMD [ "npm", "run", "start"]
+# Run
+CMD npm run prisma:generate-migrations && npm run prisma:apply-migrations && npm run start

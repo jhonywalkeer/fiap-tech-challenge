@@ -1,21 +1,23 @@
 version: '3.8'
 services:
   app:
+    container_name: app
     build:
       dockerfile: Dockerfile
-    container_name: app
-    ports:
-      - '4000:4000'
     depends_on:
-      - fiap-tech-challenge-db
-  fiap-tech-challenge-db:
+      - db
+    environment:
+      - DATABASE_URL=postgres://root:1234@db:5432/fiap-tech-challenge-db
+    ports:
+      - '3000:3000'
+  db:
     image: postgres
-    container_name: fiap-tech-challenge-db
+    container_name: db
     restart: always
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=1234
-      - POSTGRES_DATABASE=fiap-tech-challenge
+      - POSTGRES_DB=fiap-tech-challenge-db
     ports:
       - '5432:5432'
 networks:

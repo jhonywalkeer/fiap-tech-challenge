@@ -14,7 +14,7 @@
 Clone o repositorio para sua máquina local utilizando o comando abaixo:
 
 ```bash
-git clone
+git clone https://github.com/jhonywalkeer/fiap-tech-challenge.git
 ```
 
 Dessa forma, você terá o projeto em sua máquina local, podendo executá-lo e/ou editá-lo. Tendo como opcao execucao do projeto em sua máquina local ou em um container Docker.
@@ -24,7 +24,6 @@ Dessa forma, você terá o projeto em sua máquina local, podendo executá-lo e/
 ```bash
 npm install
 # ou
-
 yarn install
 ```
 
@@ -38,8 +37,12 @@ DATABASE_URL=postgres://postgres:postgres@localhost:5432/fiap-tech-challenge
 
 ### Executando as migrações
 
+Basta executar o script definido como `prisma:apply-migrations`:
+
 ```bash
-yarn typeorm migration:run
+npm run prisma:apply-migrations
+# ou
+yarn prisma:apply-migrations
 ```
 
 ### Docker
