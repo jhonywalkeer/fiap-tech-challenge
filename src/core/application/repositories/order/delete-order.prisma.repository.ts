@@ -1,11 +1,11 @@
-import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
-import { ErrorName } from 'common/enums/error-name.enum'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { HttpException } from 'common/utils/exceptions/http.exceptions'
-import { DeleteOrderRepository } from 'core/application/ports/out/delete-order.repository.out'
+import { DatabaseConnection } from '../../../../adapters/driven/infrastructure/persistence/database-connection'
+import { ErrorName } from '../../../../common/enums/error-name.enum'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { HttpException } from '../../../../common/utils/exceptions/http.exceptions'
+import { DeleteOrderRepository } from '../../../../core/application/ports/out/delete-order.repository.out'
 import { FindOrderByIdPrismaRepository } from './find-order-by-id.prisma.repository'
-import { DeleteOrderDTO } from 'adapters/driver/dtos/order/delete-order.dto'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { DeleteOrderDTO } from '../../../../adapters/driver/dtos/order/delete-order.dto'
+import { ErrorMessage } from '../../../../common/enums/error-message.enum'
 
 export class DeleteOrderPrismaRepository implements DeleteOrderRepository {
   constructor(

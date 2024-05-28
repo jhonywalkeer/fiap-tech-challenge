@@ -1,10 +1,10 @@
-import { Controller } from 'core/application/ports/in/controller.in'
-import { HttpRequest } from 'core/application/ports/in/http-request.in'
-import { ResponseHandler } from 'adapters/driver/presenters/response-handler.presenter'
-import { CreateUserUseCase } from 'core/application/ports/in/create-user.usecase.in'
-import { User } from 'core/domain/entities/user.entity'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { CreateUserDTO } from 'adapters/driver/dtos/users/create-user.dto'
+import { Controller } from '../../../../core/application/ports/in/controller.in'
+import { HttpRequest } from '../../../../core/application/ports/in/http-request.in'
+import { ResponseHandler } from '../../../../adapters/driver/presenters/response-handler.presenter'
+import { CreateUserUseCase } from '../../../../core/application/ports/in/create-user.usecase.in'
+import { User } from '../../../../core/domain/entities/user.entity'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { CreateUserDTO } from '../../../../adapters/driver/dtos/users/create-user.dto'
 
 export class CreateUserController implements Controller<User> {
   constructor(

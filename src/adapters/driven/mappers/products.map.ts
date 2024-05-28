@@ -1,4 +1,4 @@
-import { Product } from 'core/domain/entities/product.entity'
+import { Product } from '../../../core/domain/entities/product.entity'
 
 export class ProductMap {
   static execute(product: any, category?: any): Product {

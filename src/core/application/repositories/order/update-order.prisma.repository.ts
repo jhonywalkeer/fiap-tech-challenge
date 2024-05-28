@@ -1,13 +1,13 @@
-import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
-import { ErrorName } from 'common/enums/error-name.enum'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { HttpException } from 'common/utils/exceptions/http.exceptions'
-import { UpdateOrderRepository } from 'core/application/ports/out/update-order.repository.out'
+import { DatabaseConnection } from '../../../../adapters/driven/infrastructure/persistence/database-connection'
+import { ErrorName } from '../../../../common/enums/error-name.enum'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { HttpException } from '../../../../common/utils/exceptions/http.exceptions'
+import { UpdateOrderRepository } from '../../../../core/application/ports/out/update-order.repository.out'
 import { FindOrderByIdPrismaRepository } from './find-order-by-id.prisma.repository'
-import { Order } from 'core/domain/entities/order.entity'
-import { UpdateOrderDTO } from 'adapters/driver/dtos/order/update-order.dto'
-import { ErrorMessage } from 'common/enums/error-message.enum'
-import { PaymentCommunication } from 'adapters/driven/infrastructure/gateway/payment/payment-communication'
+import { Order } from '../../../../core/domain/entities/order.entity'
+import { UpdateOrderDTO } from '../../../../adapters/driver/dtos/order/update-order.dto'
+import { ErrorMessage } from '../../../../common/enums/error-message.enum'
+import { PaymentCommunication } from '../../../../adapters/driven/infrastructure/gateway/payment/payment-communication'
 
 export class UpdateOrderPrismaRepository implements UpdateOrderRepository {
   constructor(

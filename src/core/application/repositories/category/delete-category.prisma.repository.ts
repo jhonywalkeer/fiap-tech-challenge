@@ -1,10 +1,10 @@
-import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
-import { ErrorName } from 'common/enums/error-name.enum'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { HttpException } from 'common/utils/exceptions/http.exceptions'
-import { DeleteCategoryRepository } from 'core/application/ports/out/delete-category.repository.out'
+import { DatabaseConnection } from '../../../../adapters/driven/infrastructure/persistence/database-connection'
+import { ErrorName } from '../../../../common/enums/error-name.enum'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { HttpException } from '../../../../common/utils/exceptions/http.exceptions'
+import { DeleteCategoryRepository } from '../../../../core/application/ports/out/delete-category.repository.out'
 import { FindCategoryByIdPrismaRepository } from './find-category-by-id.prisma.repository'
-import { DeleteCategoryDTO } from 'adapters/driver/dtos/category/delete-category.dto'
+import { DeleteCategoryDTO } from '../../../../adapters/driver/dtos/category/delete-category.dto'
 
 export class DeleteCategoryPrismaRepository
   implements DeleteCategoryRepository

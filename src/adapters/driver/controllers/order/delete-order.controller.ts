@@ -1,9 +1,9 @@
-import { DeleteOrderDTO } from 'adapters/driver/dtos/order/delete-order.dto'
-import { ResponseHandler } from 'adapters/driver/presenters/response-handler.presenter'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { Controller } from 'core/application/ports/in/controller.in'
-import { DeleteOrderUseCase } from 'core/application/ports/in/delete-order.usecase.in'
-import { HttpRequest } from 'core/application/ports/in/http-request.in'
+import { DeleteOrderDTO } from '../../../../adapters/driver/dtos/order/delete-order.dto'
+import { ResponseHandler } from '../../../../adapters/driver/presenters/response-handler.presenter'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { Controller } from '../../../../core/application/ports/in/controller.in'
+import { DeleteOrderUseCase } from '../../../../core/application/ports/in/delete-order.usecase.in'
+import { HttpRequest } from '../../../../core/application/ports/in/http-request.in'
 
 export class DeleteOrderController implements Controller<void | never> {
   constructor(

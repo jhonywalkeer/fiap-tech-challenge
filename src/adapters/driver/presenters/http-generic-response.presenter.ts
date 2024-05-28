@@ -1,4 +1,4 @@
-import { HttpResponse } from 'core/application/ports/out/http-response.out'
+import { HttpResponse } from '../../../core/application/ports/out/http-response.out'
 import { ResponseHandler } from './response-handler.presenter'
 
 export class HttpGenericResponse<T> implements ResponseHandler<T> {

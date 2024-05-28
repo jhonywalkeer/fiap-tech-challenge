@@ -1,7 +1,7 @@
-import { FindAllCategoriesDTO } from 'adapters/driver/dtos/category/find-all-categories.dto'
-import { FindAllCategoriesUseCase } from 'core/application/ports/in/find-all-categories.usecase.in'
-import { FindAllCategoriesRepository } from 'core/application/ports/out/find-all-categories.repository.out'
-import { Category } from 'core/domain/entities/category.entity'
+import { FindAllCategoriesDTO } from '../../../../adapters/driver/dtos/category/find-all-categories.dto'
+import { FindAllCategoriesUseCase } from '../../../../core/application/ports/in/find-all-categories.usecase.in'
+import { FindAllCategoriesRepository } from '../../../../core/application/ports/out/find-all-categories.repository.out'
+import { Category } from '../../../../core/domain/entities/category.entity'
 
 export class FindAllCategoriesUC implements FindAllCategoriesUseCase {
   constructor(

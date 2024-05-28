@@ -1,5 +1,5 @@
-import { HttpException } from 'common/utils/exceptions/http.exceptions'
-import { Controller } from 'core/application/ports/in/controller.in'
+import { HttpException } from '../../../common/utils/exceptions/http.exceptions'
+import { Controller } from '../../../core/application/ports/in/controller.in'
 import { NextFunction, Request, Response } from 'express'
 
 export const ExpressRouteHttp = <T>(controller: Controller<T>) => {
