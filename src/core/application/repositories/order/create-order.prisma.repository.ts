@@ -1,3 +1,4 @@
+import { PaymentCommunication } from 'adapters/driven/infrastructure/gateway/payment/payment-communication'
 import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
 import { CreateOrderDTO } from 'adapters/driver/dtos/order/create-order.dto'
 import { ErrorName } from 'common/enums/error-name.enum'
@@ -110,7 +111,7 @@ export class CreateOrderPrismaRepository implements CreateOrderRepository {
         payment_method: findPayment?.payment_method,
         amount: findPayment?.amount,
         order_id: findPayment?.order_id,
-        qr_code: body.payment.qr_code,
+        qr_code: PaymentCommunication() as unknown as string,
         status: createOrder.status,
         payment_date: findPayment?.created_at
       },
