@@ -1,4 +1,5 @@
 import { ResponseHandler } from 'adapters/driver/presenters/response-handler.presenter'
+import { ErrorMessage } from 'common/enums/error-message.enum'
 import { ErrorName } from 'common/enums/error-name.enum'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
@@ -7,9 +8,7 @@ import { FindAllCategoriesUseCase } from 'core/application/ports/in/find-all-cat
 import { HttpRequest } from 'core/application/ports/in/http-request.in'
 import { Category } from 'core/domain/entities/category.entity'
 
-export class FindAllCategoriesController
-  implements Controller<Category[] | never>
-{
+export class FindAllCategoriesController implements Controller<Category[]> {
   constructor(
     private readonly findAllUserUC: FindAllCategoriesUseCase,
     private readonly findAllUserPresenter: ResponseHandler<Category[]>
@@ -23,7 +22,7 @@ export class FindAllCategoriesController
       throw new HttpException(
         StatusCode.NotFound,
         ErrorName.NotFoundInformation,
-        'Categorias não encontradas'
+        ErrorMessage.CategoriesNotFound
       )
     }
     return this.findAllUserPresenter.response(categories, StatusCode.Sucess)

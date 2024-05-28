@@ -7,6 +7,7 @@ import { ErrorName } from 'common/enums/error-name.enum'
 import { Category } from 'core/domain/entities/category.entity'
 import { FindCategoryByIdDTO } from 'adapters/driver/dtos/category/find-category-by-id.dto'
 import { FindCategoryByIdUseCase } from 'core/application/ports/in/find-category-by-id.usecase.in'
+import { ErrorMessage } from 'common/enums/error-message.enum'
 
 export class FindCategoryByIdController
   implements Controller<Category | never>
@@ -25,7 +26,7 @@ export class FindCategoryByIdController
       throw new HttpException(
         StatusCode.NotFound,
         ErrorName.NotFoundInformation,
-        'Categoria informada não encontrada'
+        ErrorMessage.CategoryNotFound
       )
     }
 

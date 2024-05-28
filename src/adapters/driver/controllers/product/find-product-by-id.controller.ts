@@ -7,8 +7,9 @@ import { ErrorName } from 'common/enums/error-name.enum'
 import { Product } from 'core/domain/entities/product.entity'
 import { FindProductByIdDTO } from 'adapters/driver/dtos/product/find-product-by-id.dto'
 import { FindProductByIdUseCase } from 'core/application/ports/in/find-product-by-id.usecase.in'
+import { ErrorMessage } from 'common/enums/error-message.enum'
 
-export class FindProductByIdController implements Controller<Product | never> {
+export class FindProductByIdController implements Controller<Product> {
   constructor(
     private readonly findProductByIdUC: FindProductByIdUseCase,
     private readonly findProductByIdPresenter: ResponseHandler<Product>
@@ -23,7 +24,7 @@ export class FindProductByIdController implements Controller<Product | never> {
       throw new HttpException(
         StatusCode.NotFound,
         ErrorName.NotFoundInformation,
-        'Produto informado não encontrado'
+        ErrorMessage.ProductNotFound
       )
     }
 

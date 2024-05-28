@@ -26,7 +26,6 @@ export const ExpressRouteHttp = <T>(controller: Controller<T>) => {
             message: error.message
           })
         }
-        return next(error)
       })
   }
 }

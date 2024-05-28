@@ -5,7 +5,7 @@ import { Controller } from 'core/application/ports/in/controller.in'
 import { DeleteProductUseCase } from 'core/application/ports/in/delete-product.usecase.in'
 import { HttpRequest } from 'core/application/ports/in/http-request.in'
 
-export class DeleteProductController implements Controller<void | never> {
+export class DeleteProductController implements Controller<void> {
   constructor(
     private readonly deleteProductUC: DeleteProductUseCase,
     private readonly deleteProductPresenter: ResponseHandler<void>

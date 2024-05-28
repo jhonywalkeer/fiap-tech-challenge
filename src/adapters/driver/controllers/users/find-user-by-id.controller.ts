@@ -7,8 +7,9 @@ import { HttpException } from 'common/utils/exceptions/http.exceptions'
 import { ErrorName } from 'common/enums/error-name.enum'
 import { FindUserByIdDTO } from 'adapters/driver/dtos/users/find-user-by-id.dto'
 import { FindUserByIdUseCase } from 'core/application/ports/in/find-user-by-id.usecase.in'
+import { ErrorMessage } from 'common/enums/error-message.enum'
 
-export class FindByIdController implements Controller<User | never> {
+export class FindByIdController implements Controller<User> {
   constructor(
     private readonly findUserByIdUC: FindUserByIdUseCase,
     private readonly findUserByIdPresenter: ResponseHandler<User>
@@ -22,7 +23,7 @@ export class FindByIdController implements Controller<User | never> {
       throw new HttpException(
         StatusCode.NotFound,
         ErrorName.NotFoundInformation,
-        'Usuário informado não encontrado'
+        ErrorMessage.UserNotFound
       )
     }
 

@@ -1,4 +1,5 @@
 import { ResponseHandler } from 'adapters/driver/presenters/response-handler.presenter'
+import { ErrorMessage } from 'common/enums/error-message.enum'
 import { ErrorName } from 'common/enums/error-name.enum'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { HttpException } from 'common/utils/exceptions/http.exceptions'
@@ -7,9 +8,7 @@ import { FindAllProductsUseCase } from 'core/application/ports/in/find-all-produ
 import { HttpRequest } from 'core/application/ports/in/http-request.in'
 import { Product } from 'core/domain/entities/product.entity'
 
-export class FindAllProductsController
-  implements Controller<Product[] | never>
-{
+export class FindAllProductsController implements Controller<Product[]> {
   constructor(
     private readonly findAllProductUC: FindAllProductsUseCase,
     private readonly findAllProductPresenter: ResponseHandler<Product[]>
@@ -23,7 +22,7 @@ export class FindAllProductsController
       throw new HttpException(
         StatusCode.NotFound,
         ErrorName.NotFoundInformation,
-        'Produtos não encontrados'
+        ErrorMessage.ProductsNotFound
       )
     }
     return this.findAllProductPresenter.response(products, StatusCode.Sucess)

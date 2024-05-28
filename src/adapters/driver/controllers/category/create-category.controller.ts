@@ -6,7 +6,7 @@ import { CreateCategoryUseCase } from 'core/application/ports/in/create-category
 import { HttpRequest } from 'core/application/ports/in/http-request.in'
 import { Category } from 'core/domain/entities/category.entity'
 
-export class CreateCategoryController implements Controller<Category | never> {
+export class CreateCategoryController implements Controller<Category> {
   constructor(
     private readonly createCategoryUC: CreateCategoryUseCase,
     private readonly createCategoryPresenter: ResponseHandler<Category>

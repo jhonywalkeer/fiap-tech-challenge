@@ -6,7 +6,7 @@ import { User } from 'core/domain/entities/user.entity'
 import { StatusCode } from 'common/enums/status-code.enum'
 import { CreateUserDTO } from 'adapters/driver/dtos/users/create-user.dto'
 
-export class CreateUserController implements Controller<User | never> {
+export class CreateUserController implements Controller<User> {
   constructor(
     private readonly createUserUC: CreateUserUseCase,
     private readonly createUserPresenter: ResponseHandler<User>

@@ -72,7 +72,7 @@ export class CreateOrderPrismaRepository implements CreateOrderRepository {
             payment_method: body.payment.method,
             amount: orderItems.reduce((acc, item) => acc + item.amount, 0),
             order_id: identifierOrder,
-            qr_code: body.payment.qr_code,
+            qr_code: '',
             status: OrderStatus.AwaitingPayment
           }
         },
@@ -81,8 +81,8 @@ export class CreateOrderPrismaRepository implements CreateOrderRepository {
       }
     })
 
-    const [createOrderItems, findPayment] = await Promise.all([
-      this.prisma.order_item.createMany({
+    const [createOrderItems, identifyOrder] = await Promise.all([
+      await this.prisma.order_item.createMany({
         data: orderItems.map((item) => ({
           order_id: createOrder.id,
           product_id: item.product_id,
@@ -92,12 +92,18 @@ export class CreateOrderPrismaRepository implements CreateOrderRepository {
           amount: item.amount
         }))
       }),
-      this.prisma.payment.findFirst({
+      await this.prisma.order.findFirst({
         where: {
-          order_id: createOrder.id
+          id: createOrder.id
         }
       })
     ])
+
+    const findPayment = await this.prisma.payment.findFirst({
+      where: {
+        order_id: identifyOrder?.order
+      }
+    })
 
     return {
       id: createOrder.id,
@@ -111,9 +117,9 @@ export class CreateOrderPrismaRepository implements CreateOrderRepository {
         payment_method: findPayment?.payment_method,
         amount: findPayment?.amount,
         order_id: findPayment?.order_id,
-        qr_code: PaymentCommunication() as unknown as string,
+        qr_code: await PaymentCommunication(),
         status: createOrder.status,
-        payment_date: findPayment?.created_at
+        payment_date: findPayment?.payment_date
       },
       observation: body.observation ?? 'Sem observações'
     }

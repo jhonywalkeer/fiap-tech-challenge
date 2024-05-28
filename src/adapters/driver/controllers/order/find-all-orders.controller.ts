@@ -6,7 +6,7 @@ import { Controller } from 'core/application/ports/in/controller.in'
 import { HttpRequest } from 'core/application/ports/in/http-request.in'
 import { Order } from 'core/domain/entities/order.entity'
 
-export class FindAllOrdersController implements Controller<Order[] | never> {
+export class FindAllOrdersController implements Controller<Order[]> {
   constructor(
     private readonly findAllOrdersUC: any,
     private readonly findAllOrdersPresenter: ResponseHandler<Order[]>
