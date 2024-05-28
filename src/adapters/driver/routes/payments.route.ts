@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { ExpressRouteHttp } from 'adapters/driver/http/express-route.http'
+import { ExpressRouteHttp } from '../../../adapters/driver/http/express-route.http'
 import { UpdatePaymentControllerFactory } from '../factories/payment/update-payment.factory'
 
 export const PaymentsRoute = Router()

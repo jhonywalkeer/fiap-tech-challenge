@@ -1,11 +1,11 @@
-import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
-import { DeleteProductDTO } from 'adapters/driver/dtos/product/delete-product.dto'
-import { ErrorName } from 'common/enums/error-name.enum'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { HttpException } from 'common/utils/exceptions/http.exceptions'
-import { DeleteProductRepository } from 'core/application/ports/out/delete-product.repository.out'
+import { DatabaseConnection } from '../../../../adapters/driven/infrastructure/persistence/database-connection'
+import { DeleteProductDTO } from '../../../../adapters/driver/dtos/product/delete-product.dto'
+import { ErrorName } from '../../../../common/enums/error-name.enum'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { HttpException } from '../../../../common/utils/exceptions/http.exceptions'
+import { DeleteProductRepository } from '../../../../core/application/ports/out/delete-product.repository.out'
 import { FindProductByIdPrismaRepository } from './find-product-by-id.prisma.repository'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { ErrorMessage } from '../../../../common/enums/error-message.enum'
 
 export class DeleteProductPrismaRepository implements DeleteProductRepository {
   constructor(

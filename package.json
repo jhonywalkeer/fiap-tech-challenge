@@ -7,8 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
+    "build": "tsc",
     "start:dev": "nodemon",
-    "start:build": "tsc && node dist/bootstrap/server.ts",
+    "start": "node dist/src/bootstrap/server.js",
     "prisma:generate-migrations": "npx prisma migrate dev",
     "prisma:apply-migrations": "npx prisma migrate deploy",
     "format:code": "prettier --write && npx prisma format",
@@ -18,8 +19,15 @@
     "prepush": "npm run test"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Jhony Walker (https://github.com/jhonywalkeer)",
+  "contributors": [
+    {
+      "name": "Luiz Duarte",
+      "email": "contato@luiztools.com.br",
+      "url": "https://www.luiztools.com.br"
+    }
+  ],
+  "license": " Apache-2.0 license",
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",

@@ -1,13 +1,12 @@
-import { Prisma } from '@prisma/client'
-import { PaymentCommunication } from 'adapters/driven/infrastructure/gateway/payment/payment-communication'
-import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
-import { UpdatePaymentDTO } from 'adapters/driver/dtos/payment/update-payment.dto'
-import { ErrorMessage } from 'common/enums/error-message.enum'
-import { ErrorName } from 'common/enums/error-name.enum'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { HttpException } from 'common/utils/exceptions/http.exceptions'
-import { UpdatePaymentRepository } from 'core/application/ports/out/update-payment.repository.out'
-import { Payment } from 'core/domain/entities/payment.entity'
+import { PaymentCommunication } from '../../../../adapters/driven/infrastructure/gateway/payment/payment-communication'
+import { DatabaseConnection } from '../../../../adapters/driven/infrastructure/persistence/database-connection'
+import { UpdatePaymentDTO } from '../../../../adapters/driver/dtos/payment/update-payment.dto'
+import { ErrorMessage } from '../../../../common/enums/error-message.enum'
+import { ErrorName } from '../../../../common/enums/error-name.enum'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { HttpException } from '../../../../common/utils/exceptions/http.exceptions'
+import { UpdatePaymentRepository } from '../../../../core/application/ports/out/update-payment.repository.out'
+import { Payment } from '../../../../core/domain/entities/payment.entity'
 
 export class UpdatePaymentPrismaRepository implements UpdatePaymentRepository {
   constructor(private readonly prisma: DatabaseConnection) {}

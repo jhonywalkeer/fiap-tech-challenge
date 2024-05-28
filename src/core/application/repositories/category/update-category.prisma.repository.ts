@@ -1,12 +1,12 @@
-import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
-import { ErrorName } from 'common/enums/error-name.enum'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { HttpException } from 'common/utils/exceptions/http.exceptions'
-import { UpdateCategoryRepository } from 'core/application/ports/out/update-category.repository.out'
+import { DatabaseConnection } from '../../../../adapters/driven/infrastructure/persistence/database-connection'
+import { ErrorName } from '../../../../common/enums/error-name.enum'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { HttpException } from '../../../../common/utils/exceptions/http.exceptions'
+import { UpdateCategoryRepository } from '../../../../core/application/ports/out/update-category.repository.out'
 import { FindCategoryByIdPrismaRepository } from './find-category-by-id.prisma.repository'
-import { UpdateCategoryDTO } from 'adapters/driver/dtos/category/update-category.dto'
-import { Category } from 'core/domain/entities/category.entity'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { UpdateCategoryDTO } from '../../../../adapters/driver/dtos/category/update-category.dto'
+import { Category } from '../../../../core/domain/entities/category.entity'
+import { ErrorMessage } from '../../../../common/enums/error-message.enum'
 
 export class UpdateCategoryPrismaRepository
   implements UpdateCategoryRepository

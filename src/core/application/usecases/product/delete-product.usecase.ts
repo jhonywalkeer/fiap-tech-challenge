@@ -1,6 +1,6 @@
-import { DeleteProductDTO } from 'adapters/driver/dtos/product/delete-product.dto'
-import { DeleteProductUseCase } from 'core/application/ports/in/delete-product.usecase.in'
-import { DeleteProductRepository } from 'core/application/ports/out/delete-product.repository.out'
+import { DeleteProductDTO } from '../../../../adapters/driver/dtos/product/delete-product.dto'
+import { DeleteProductUseCase } from '../../../../core/application/ports/in/delete-product.usecase.in'
+import { DeleteProductRepository } from '../../../../core/application/ports/out/delete-product.repository.out'
 
 export class DeleteProductUC implements DeleteProductUseCase {
   constructor(

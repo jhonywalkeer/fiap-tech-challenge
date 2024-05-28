@@ -1,7 +1,7 @@
-import { UpdatePaymentDTO } from 'adapters/driver/dtos/payment/update-payment.dto'
-import { UpdatePaymentUseCase } from 'core/application/ports/in/update-payment.usecase.in'
-import { UpdatePaymentRepository } from 'core/application/ports/out/update-payment.repository.out'
-import { Payment } from 'core/domain/entities/payment.entity'
+import { UpdatePaymentDTO } from '../../../../adapters/driver/dtos/payment/update-payment.dto'
+import { UpdatePaymentUseCase } from '../../../../core/application/ports/in/update-payment.usecase.in'
+import { UpdatePaymentRepository } from '../../../../core/application/ports/out/update-payment.repository.out'
+import { Payment } from '../../../../core/domain/entities/payment.entity'
 
 export class UpdatePaymentUC implements UpdatePaymentUseCase {
   constructor(

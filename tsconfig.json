@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
-    "outDir": "dist",
-    "target": "ES2021",
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "target": "es6",
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -14,7 +14,11 @@
     "strictPropertyInitialization": false,
     "allowJs": true,
     "removeComments": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "*": ["*"]
+    }
   },
-  "exclude": ["dist"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }

@@ -1,13 +1,13 @@
-import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
-import { ErrorName } from 'common/enums/error-name.enum'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { HttpException } from 'common/utils/exceptions/http.exceptions'
+import { DatabaseConnection } from '../../../../adapters/driven/infrastructure/persistence/database-connection'
+import { ErrorName } from '../../../../common/enums/error-name.enum'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { HttpException } from '../../../../common/utils/exceptions/http.exceptions'
 import { FindProductByIdPrismaRepository } from './find-product-by-id.prisma.repository'
-import { UpdateProductRepository } from 'core/application/ports/out/update-product.repository.out'
-import { Product } from 'core/domain/entities/product.entity'
-import { UpdateProductDTO } from 'adapters/driver/dtos/product/update-product.dto'
-import { ProductMap } from 'adapters/driven/mappers/products.map'
-import { ErrorMessage } from 'common/enums/error-message.enum'
+import { UpdateProductRepository } from '../../../../core/application/ports/out/update-product.repository.out'
+import { Product } from '../../../../core/domain/entities/product.entity'
+import { UpdateProductDTO } from '../../../../adapters/driver/dtos/product/update-product.dto'
+import { ProductMap } from '../../../../adapters/driven/mappers/products.map'
+import { ErrorMessage } from '../../../../common/enums/error-message.enum'
 
 export class UpdateProductPrismaRepository implements UpdateProductRepository {
   constructor(

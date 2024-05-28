@@ -1,8 +1,8 @@
-import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
-import { ProductMap } from 'adapters/driven/mappers/products.map'
-import { FindProductByIdDTO } from 'adapters/driver/dtos/product/find-product-by-id.dto'
-import { FindProductByIdRepository } from 'core/application/ports/out/find-product-by-id.repository.out'
-import { Product } from 'core/domain/entities/product.entity'
+import { DatabaseConnection } from '../../../../adapters/driven/infrastructure/persistence/database-connection'
+import { ProductMap } from '../../../../adapters/driven/mappers/products.map'
+import { FindProductByIdDTO } from '../../../../adapters/driver/dtos/product/find-product-by-id.dto'
+import { FindProductByIdRepository } from '../../../../core/application/ports/out/find-product-by-id.repository.out'
+import { Product } from '../../../../core/domain/entities/product.entity'
 
 export class FindProductByIdPrismaRepository
   implements FindProductByIdRepository

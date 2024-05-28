@@ -1,12 +1,12 @@
-import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
-import { ProductMap } from 'adapters/driven/mappers/products.map'
-import { CreateProductDTO } from 'adapters/driver/dtos/product/create-product.dto'
-import { ErrorMessage } from 'common/enums/error-message.enum'
-import { ErrorName } from 'common/enums/error-name.enum'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { HttpException } from 'common/utils/exceptions/http.exceptions'
-import { CreateProductRepository } from 'core/application/ports/out/create-product.repository.out'
-import { Product } from 'core/domain/entities/product.entity'
+import { DatabaseConnection } from '../../../../adapters/driven/infrastructure/persistence/database-connection'
+import { ProductMap } from '../../../../adapters/driven/mappers/products.map'
+import { CreateProductDTO } from '../../../../adapters/driver/dtos/product/create-product.dto'
+import { ErrorMessage } from '../../../../common/enums/error-message.enum'
+import { ErrorName } from '../../../../common/enums/error-name.enum'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { HttpException } from '../../../../common/utils/exceptions/http.exceptions'
+import { CreateProductRepository } from '../../../../core/application/ports/out/create-product.repository.out'
+import { Product } from '../../../../core/domain/entities/product.entity'
 
 export class CreateProductPrismaRepository implements CreateProductRepository {
   constructor(private readonly prisma: DatabaseConnection) {}

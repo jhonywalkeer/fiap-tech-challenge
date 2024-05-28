@@ -28,7 +28,7 @@ A documentação do sistema (DDD) com Event Storming segue abaixo (escolha o sis
     - [Framework Express ou Nest.js](#framework)
 - [Como Executar o Projeto](#como-executar-o-projeto)
   - [Documentação da API](#documentação-da-api)
-    - [Swagger preview](#swagger-preview)
+    - [Swagger preview](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/swagger/swagger-render-image.png)
     - [Endpoints](#endpoints)
       - [Usuários](#usuarios)
       - [Categorias](#categorias)

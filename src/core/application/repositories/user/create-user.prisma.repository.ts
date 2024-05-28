@@ -1,11 +1,11 @@
-import { DatabaseConnection } from 'adapters/driven/infrastructure/persistence/database-connection'
-import { CreateUserDTO } from 'adapters/driver/dtos/users/create-user.dto'
-import { ErrorMessage } from 'common/enums/error-message.enum'
-import { ErrorName } from 'common/enums/error-name.enum'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { HttpException } from 'common/utils/exceptions/http.exceptions'
-import { CreateUserRepository } from 'core/application/ports/out/create-user.repository.out'
-import { User } from 'core/domain/entities/user.entity'
+import { DatabaseConnection } from '../../../../adapters/driven/infrastructure/persistence/database-connection'
+import { CreateUserDTO } from '../../../../adapters/driver/dtos/users/create-user.dto'
+import { ErrorMessage } from '../../../../common/enums/error-message.enum'
+import { ErrorName } from '../../../../common/enums/error-name.enum'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { HttpException } from '../../../../common/utils/exceptions/http.exceptions'
+import { CreateUserRepository } from '../../../../core/application/ports/out/create-user.repository.out'
+import { User } from '../../../../core/domain/entities/user.entity'
 
 export class CreateUserPrismaRepository implements CreateUserRepository {
   constructor(private readonly prisma: DatabaseConnection) {}

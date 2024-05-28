@@ -4,8 +4,8 @@ import {
   OrdersRoute,
   UsersRoute,
   PaymentsRoute
-} from 'adapters/driver/routes'
-import {} from 'adapters/driver/routes/orders.route'
+} from '../../../adapters/driver/routes'
+import {} from '../../../adapters/driver/routes/orders.route'
 import { Application } from 'express'
 import { ExpressRateLimit } from './rate-limit.framework'
 import { serve, setup } from 'swagger-ui-express'

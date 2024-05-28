@@ -1,4 +1,4 @@
-import { IsStringValidator } from 'adapters/driver/validators/is-string.validator'
+import { IsStringValidator } from '../../../../adapters/driver/validators/is-string.validator'
 
 export class CreateOrderItemsDTO {
   product_id: string

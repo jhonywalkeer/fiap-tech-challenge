@@ -1,9 +1,9 @@
-import { HttpException } from 'common/utils/exceptions/http.exceptions'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { ErrorName } from 'common/enums/error-name.enum'
-import { IsStringValidator } from 'adapters/driver/validators/is-string.validator'
-import { ErrorMessage } from 'common/enums/error-message.enum'
-import { IsNumberValidator } from 'adapters/driver/validators/is-number.validator'
+import { HttpException } from '../../../../common/utils/exceptions/http.exceptions'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { ErrorName } from '../../../../common/enums/error-name.enum'
+import { IsStringValidator } from '../../../../adapters/driver/validators/is-string.validator'
+import { ErrorMessage } from '../../../../common/enums/error-message.enum'
+import { IsNumberValidator } from '../../../../adapters/driver/validators/is-number.validator'
 
 export class CreateProductDTO {
   name: string

@@ -1,17 +1,11 @@
 version: '3.8'
 services:
-  fiap-tech-challenge-api:
+  app:
     build:
-      context: ./
-      target: development-build-stage
       dockerfile: Dockerfile
-    container_name: fiap-tech-challenge-api
+    container_name: app
     ports:
-      - '3000:3000'
-    volumes:
-      - ./:/app
-      - /app/node_modules
-    restart: 'unless-stopped'
+      - '4000:4000'
     depends_on:
       - fiap-tech-challenge-db
   fiap-tech-challenge-db:
@@ -24,6 +18,6 @@ services:
       - POSTGRES_DATABASE=fiap-tech-challenge
     ports:
       - '5432:5432'
-volumes:
-  data:
-    driver: local
+networks:
+  default:
+    driver: bridge

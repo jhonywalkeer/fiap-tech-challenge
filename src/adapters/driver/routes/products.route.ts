@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { ExpressRouteHttp } from 'adapters/driver/http/express-route.http'
+import { ExpressRouteHttp } from '../../../adapters/driver/http/express-route.http'
 import { CreateProductControllerFactory } from '../factories/product/create-product.factory'
 import { FindProductByIdControllerFactory } from '../factories/product/find-product-by-id.factory'
 import { FindAllProductsControllerFactory } from '../factories/product/find-all-products.factory'

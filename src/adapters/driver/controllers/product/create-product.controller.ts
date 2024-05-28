@@ -1,10 +1,10 @@
-import { CreateProductDTO } from 'adapters/driver/dtos/product/create-product.dto'
-import { ResponseHandler } from 'adapters/driver/presenters/response-handler.presenter'
-import { StatusCode } from 'common/enums/status-code.enum'
-import { Controller } from 'core/application/ports/in/controller.in'
-import { CreateProductUseCase } from 'core/application/ports/in/create-product.usecase.in'
-import { HttpRequest } from 'core/application/ports/in/http-request.in'
-import { Product } from 'core/domain/entities/product.entity'
+import { CreateProductDTO } from '../../../../adapters/driver/dtos/product/create-product.dto'
+import { ResponseHandler } from '../../../../adapters/driver/presenters/response-handler.presenter'
+import { StatusCode } from '../../../../common/enums/status-code.enum'
+import { Controller } from '../../../../core/application/ports/in/controller.in'
+import { CreateProductUseCase } from '../../../../core/application/ports/in/create-product.usecase.in'
+import { HttpRequest } from '../../../../core/application/ports/in/http-request.in'
+import { Product } from '../../../../core/domain/entities/product.entity'
 
 export class CreateProductController implements Controller<Product> {
   constructor(
