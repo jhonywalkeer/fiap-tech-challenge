@@ -11,29 +11,14 @@ Esta API foi desenvolvida para ajudar lanchonetes e restaurantes a gerenciar de 
 A documentação do sistema (DDD) com Event Storming segue abaixo (escolha o sistema que você tem mais afinidade) lambrado que a documentação que foi feita no Miro e no Figjan estao exclusivamente em portugues brasileiro:
 
 - **Miro**: https://miro.com/app/board/uXjVKLXulkE=/
-- **Figjan**: https://www.figma.com/file/zar1928WLEYwOZNm4TsXYI/FIAP---Tech-Challenge-%2301?type=whiteboard&node-id=0-1
-
-<!-- - [Documentação do Sistema](./docs/README.md) -->
 
 ## Sumário dos Conteúdos que podem ser encontrados neste README
 
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-  <!-- - [ADR's](#adrs)
-    - [Arquitetura Hexaganal ou Clean Architecture](#arquitetura)
-    - [Banco de dados Relacional ou Banco nao relacional](#banco-de-dados)
-    - [ORM ou Query Builder](#orm)
-    - [TypeORM ou Prisma](#typeorm)
-    - [Linguagem GO, Python o Javascript com superset Typescript](#linguagem)
-    - [Framework Express ou Nest.js](#framework) -->
 - [Como Executar o Projeto](#como-executar-o-projeto)
   - [Documentação da API](#documentação-da-api)
     - [Swagger preview](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/swagger/swagger-render-image.png)
-    - [Endpoints](#endpoints)
-      - [Usuários](#usuarios)
-      - [Categorias](#categorias)
-      - [Produtos](#produtos)
-      - [Pedidos](#pedidos)
   - [Executando o Projeto](#executando-o-projeto)
     - [Requisitos](#usuarios)
     - [Clonando o Repositório](#clonando-o-repositório)
