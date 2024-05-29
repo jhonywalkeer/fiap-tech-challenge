@@ -1,11 +1,3 @@
-<br>
-<div align="center">
-    <a href="/"><img align="center" alt="Gist" src="./docs/badges/flags/brazil-flag.svg"> Portugues (PT-BR) </a>|
-    <a href="/"><img align="center" alt="Gist" src="./docs/badges/flags/usa-flag.svg"> Ingles (EN-US) </a>|
-    <a href="/"><img align="center" alt="LinkedIn" src="./docs/badges/flags/spain-flag.svg"> Espanhol (ES-ES) </a>
-</div>
-<br>
-
 Esta API foi desenvolvida para ajudar lanchonetes e restaurantes a gerenciar de forma eficiente os pedidos dos clientes, automatizando o processo de pedidos e integrando-os diretamente com a cozinha e o sistema de estoque. Através desta API, você pode implementar um sistema de autoatendimento que melhora a experiência do cliente, reduz erros e aumenta a eficiência operacional.
 
 A documentação do sistema (DDD) com Event Storming segue abaixo (escolha o sistema que você tem mais afinidade) lambrado que a documentação que foi feita no Miro e no Figjan estao exclusivamente em portugues brasileiro:
@@ -14,16 +6,15 @@ A documentação do sistema (DDD) com Event Storming segue abaixo (escolha o sis
 
 ## Sumário dos Conteúdos que podem ser encontrados neste README
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Como Executar o Projeto](#como-executar-o-projeto)
-  - [Documentação da API](#documentação-da-api)
+- [Sobre o Projeto](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/readme/pt-br/sobre-o-projeto.md)
+- [Tecnologias Utilizadas](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/readme/pt-br/tecnologias-utilizadas.md)
+  - [Documentação da API](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/readme/pt-br/swagger-preview.md)
     - [Swagger preview](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/swagger/swagger-render-image.png)
-  - [Executando o Projeto](#executando-o-projeto)
-    - [Requisitos](#usuarios)
-    - [Clonando o Repositório](#clonando-o-repositório)
-    - [Instalando as Dependências](#instalando-as-dependências)
-    - [Configurando o Banco de Dados](#configurando-o-banco-de-dados)
-      - [Executando as Migrações](#executando-as-migrações)
+  - [Executando o Projeto](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/readme/pt-br/executando-projeto.md)
+    - [Requisitos](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/readme/pt-br/executando-projeto.md)
+    - [Clonando o Repositório](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/readme/pt-br/executando-projeto.md)
+    - [Instalando as Dependências](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/readme/pt-br/executando-projeto.md)
+    - [Configurando o Banco de Dados](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/readme/pt-br/executando-projeto.md)
+      - [Executando as Migrações](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/readme/pt-br/executando-projeto.md)
     - [Docker](#docker)
-      - [Executando o Docker](#executando-o-docker)
+      - [Executando o Docker](https://github.com/jhonywalkeer/fiap-tech-challenge/blob/develop/docs/readme/pt-br/executando-projeto.md)
